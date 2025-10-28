@@ -4,10 +4,39 @@
 Short description
 A small Spring Boot application for managing school-related data (students, courses, etc.). This README gives setup, run, and development notes — inspect controllers and configuration for exact endpoints and properties.
 
+# Why EazySchool?
+- Minimal, opinionated structure to learn Spring Boot patterns.
+- Layers: controllers, services, repositories, DTOs.
+- Runnable with Maven or Gradle; works with H2/MySQL/Postgres.
+
+# Tech stack
+- Java 11+
+- Spring Boot (Web, Data JPA, Security optional)
+- H2 (in-memory) for quick dev; MySQL/Postgres for production
+- Maven or Gradle build
+
 # Prerequisites
 - Java 11+ (or the Java version used by the project)
 - Maven or Gradle (depending on project files)
 - (Optional) Docker and Docker Compose if you prefer containerized DB
+
+# Project structure
+```
+eazyschool/
+├─ src/
+│  ├─ main/
+│  │  ├─ java/
+│  │  │  └─ com.example.eazyschool
+│  │  │     ├─ controller/      # REST controllers (routes)
+│  │  │     ├─ service/         # Business logic
+│  │  │     ├─ repository/      # Spring Data JPA repos
+│  │  │     ├─ model/           # JPA entities
+│  │  │     └─ dto/             # Request/response DTOs
+│  │  └─ resources/
+│  │     ├─ application.properties (or .yml)
+│  │     └─ data.sql / schema.sql (optional)
+└─ pom.xml or build.gradle
+```
 
 # Quick start (Maven)
 1. Build:
