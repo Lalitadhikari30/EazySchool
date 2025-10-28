@@ -4,12 +4,12 @@
 Short description
 A small Spring Boot application for managing school-related data (students, courses, etc.). This README gives setup, run, and development notes — inspect controllers and configuration for exact endpoints and properties.
 
-Prerequisites
+# Prerequisites
 - Java 11+ (or the Java version used by the project)
 - Maven or Gradle (depending on project files)
 - (Optional) Docker and Docker Compose if you prefer containerized DB
 
-Quick start (Maven)
+# Quick start (Maven)
 1. Build:
    mvn clean package
 2. Run:
@@ -17,15 +17,7 @@ Quick start (Maven)
    or
    java -jar target/<your-artifact>.jar
 
-Quick start (Gradle)
-1. Build:
-   ./gradlew clean build
-2. Run:
-   ./gradlew bootRun
-   or
-   java -jar build/libs/<your-artifact>.jar
-
-Configuration
+# Configuration
 - Application properties are under src/main/resources/application.properties (or application.yml).
 - Common properties to set:
   - spring.datasource.url
@@ -35,13 +27,13 @@ Configuration
 - For environment-specific values, use application-{profile}.properties and activate with:
   -Dspring.profiles.active=dev
 
-Database
+# Database
 - The project may use an embedded DB (H2) for development; check application.properties.
 - To use MySQL/Postgres:
   - Create database and update datasource properties.
   - Ensure JDBC driver dependency is present.
 
-Common endpoints
+# Common endpoints
 - Exact REST endpoints depend on controllers in src/main/java. Typical examples:
   - GET /api/students
   - POST /api/students
@@ -49,33 +41,33 @@ Common endpoints
   - POST /api/courses
 - Inspect controller classes to confirm routes and request/response DTOs.
 
-Running tests
+# Running tests
 - Maven:
   mvn test
 - Gradle:
   ./gradlew test
 
-IDE tips
+# IDE tips
 - Import the project as a Maven/Gradle project in IntelliJ IDEA or Eclipse.
 - Enable annotation processing if using Lombok.
 
-Logging & troubleshooting
+# Logging & troubleshooting
 - Logs are controlled by application.properties (logging.level.*).
 - For DB errors, enable SQL logging with:
   spring.jpa.show-sql=true
 
-Development notes
+# Development notes
 - Follow package structure and naming conventions used in the project.
 - Add feature branches, keep commits small, and include tests for new behavior.
 
-Contribution
+# Contribution
 - Open issues and PRs for features or fixes.
 - Include clear description, steps to reproduce, and tests.
 
-License
-- Add license information here or in a LICENSE file.
+# License
+- This project is licensed under the MIT License
 
-Where to look next
+# Where to look next
 - src/main/java/... for controllers, services, repositories
 - src/main/resources/application.properties (or .yml) for configuration
 - README is intentionally minimal: inspect code for exact entity fields and routes.
